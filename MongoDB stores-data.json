@@ -1,0 +1,7 @@
+# Mongodb document (JSON-style)
+document_1 = {
+  "_id" : "BF00001CFOOD",
+  "item_name" : "Bread",
+  "quantity" : 2,
+  "ingredients" : "all-purpose flour"
+}
