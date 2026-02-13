@@ -19,9 +19,14 @@ DB_CONFIG = {
 # DB CONNECTION (PER REQUEST)
 # =====================================================
 def get_db_connection():
-    conn = psycopg2.connect(**DB_CONFIG)
-    conn.autocommit = True
-    return conn
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        conn.autocommit = True
+        return conn
+    except Exception as e:
+        print("Database connection failed:", e)
+        return None
+
 
 # =====================================================
 # REGISTER
@@ -83,3 +88,4 @@ def login():
 # =====================================================
 if __name__ == "__main__":
     app.run(debug=True)
+
